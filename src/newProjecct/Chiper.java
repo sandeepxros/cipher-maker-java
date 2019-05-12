@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
- class Chiper {
+ public class Chiper {
 	 
 	 
      FileInputStream fis = null ;
@@ -15,7 +15,7 @@ import java.util.Scanner;
      File file = null ; 
      File file2 = null;
      Scanner sc = new Scanner(System.in);
-     final int key = key() ;
+     public final int key = key() ;
      
      
      //create new file store in file2
@@ -60,13 +60,13 @@ import java.util.Scanner;
 	}
 	
 	//generate key return key 
-	protected int key() {
+	public int key() {
 		  int key = new Random().nextInt(25)+1;
 		  return key;
 	}
 
 	//encryption start by ceaser's algorithm and return String
-	 String encrypt(String massage) {
+	 public String encrypt(String massage) {
 		    char [] c = massage.toCharArray();
 		    char[] temp = new char[c.length];
 		    for(int i = 0 ; i<c.length;i++) {
@@ -77,7 +77,7 @@ import java.util.Scanner;
 	}
 	
 	 //ceaser algorithm for decrypt file 
-	 String decrypt(String massage, int key) {
+	public String decrypt(String massage, int key) {
 		char[] b = massage.toCharArray();
     	char[] temp = new char[b.length];
         for(int i = 0; i<b.length; i++) {
@@ -87,7 +87,7 @@ import java.util.Scanner;
 	}
 	
 	//copy file text into string
-	 String copyFile(File file) throws Exception{
+	 public String copyFile(File file) throws Exception{
 	       Scanner scanner = new Scanner( file , "UTF-8" );
 	       String text = scanner.useDelimiter("\\A").next();
 	       scanner.close();
@@ -98,7 +98,7 @@ import java.util.Scanner;
 
 	 //write files
 	
-	 void writeFile(String m, File f2) throws Exception {
+	 public void writeFile(String m, File f2) throws Exception {
 	              fos = new FileOutputStream(f2);
 	              fos.write(new String(m).getBytes());
 	              System.out.println("file written SuccessFully!");

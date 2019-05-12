@@ -4,12 +4,12 @@ import java.util.Scanner;
 import javax.crypto.Cipher;
 
 import newProjecct.Chiper;
-class CipherMaker{
+public class CipherMaker{
 	Chiper chiper = new Chiper();
 	static Scanner sc = new Scanner(System.in);
 	
 	
-	protected void manage() throws Exception {
+	public void manage() throws Exception {
 	
    	 System.out.println("welcome to command based text chiper maker!");
      System.out.print("what you want(Encrypt-1) or (Decrypt-2) : ");
